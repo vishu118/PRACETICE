@@ -1,0 +1,41 @@
+.one{
+    background-color: red;
+    /* display: none; */
+    font-size: 50px;
+}
+
+@media (max-width:400px) {
+    #one{
+       
+        display: none;
+    }
+}
+
+.parent{
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    
+}
+
+.parent div{
+    width: 20%;
+    height: 200px;
+    background-color: blue;
+    margin: 1px;
+}
+.child1{
+    position: relative;
+    top: 20px;
+}
+
+.child2{
+position: relative;
+top: 30px;
+left: 30px;
+}
+.child3{
+position: absolute;
+top: 30px;
+left: 30px;
+}
