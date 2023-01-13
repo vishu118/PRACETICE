@@ -33,11 +33,71 @@
 // const [one,two,...three] = num
 // console.log(one,two,three)
 
-let arr = [2,3,45]
-let obj = {...arr}
-console.log(obj)
+// let arr = [2,3,45]
+// let obj = {...arr}
+// console.log(obj)
 
-function sum(v1,v2,v3){
-    return v1+v2+v3;
+// function sum(v1,v2,v3){
+//     return v1+v2+v3;
+// }
+// console.log(sum(...arr))
+
+
+//=========================================== hoisting===========================================================
+// getName();
+// console.log(getName)
+// console.log(getArrowName)
+// console.log(getFunctionName)
+// console.log(a)
+
+
+// var a = 2;
+//  function getName(){
+//     console.log('hello')
+//  }
+//  var getArrowName = ()=>{
+//     console.log('hello')
+//  }
+//  var getFunctionName = function(){
+//     console.log('hello')
+//  }
+
+//  console.log(getArrowName)
+// console.log(getFunctionName)
+// console.log(a)
+
+
+// =============================================scope chaining=====================================
+
+// function fun1(){
+//     let a = 2;
+//     function fun2(){
+//        console.log(a)
+//     }
+//     var z = fun2()
+//    }
+//    fun1()
+
+// let age = 12;
+// const beverage = age>=30 ? "beer" : "juice";
+// console.log(beverage)
+
+let x  = 10 ;
+// let sum = 0
+// while (x>0){
+//    sum+= x;
+//    x--;
+
+// }
+// console.log(sum)
+
+
+// =======================================set time out===================================================================
+function set(){
+   let i = 2;
+   setTimeout(function(){
+      console.log(i);
+   },3000)
 }
-console.log(sum(...arr))
+
+
