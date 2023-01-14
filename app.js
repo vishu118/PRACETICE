@@ -74,10 +74,19 @@ getSum(2)(3)(4)
 // function increment(){
 // count.innerHTML++;
 // }
-// const val = [1,2,3,5,6,8]
+
+
+const val = [1,2,3,5,6,8]
+// const [a,b,c,d]= val;
+// console.log(a,b,c,d)
+
+
+
 
 // const val2 = [9,6,5, ...val]
 // console.log(val2)
+
+
 // let obj = {
 //     name : 'vishal',
 //     id : 1,
@@ -86,6 +95,7 @@ getSum(2)(3)(4)
 
 // const {name,id} = obj
 // console.log(name,id)
+
 
 // const obj2 = {
 //     degree : "Btech",
@@ -291,24 +301,24 @@ getSum(2)(3)(4)
 
 // call function helps us to change the context of the "this " keyword  invocking funtion
 
-let name1 = {
-   firstName : "Ram",
-   lastName : "Avtaar"
-}
-let name2 = {
-   firstName : "Rameshwari",
-   lastName : "Devi"
-}
+// let name1 = {
+//    firstName : "Ram",
+//    lastName : "Avtaar"
+// }
+// let name2 = {
+//    firstName : "Rameshwari",
+//    lastName : "Devi"
+// }
 
-let getName = function(city){
-   console.log(`${this.firstName} ${this.lastName} is from ${city}`)
-}
+// let getName = function(city){
+//    console.log(`${this.firstName} ${this.lastName} is from ${city}`)
+// }
 
 // getName.apply(name1,["dehradun"])
 // getName.apply(name2,["Jharkhand"])
 
-let getName1 = getName.bind(name1,["dehradun"])
-getName1()
+// let getName1 = getName.bind(name1,["dehradun"])
+// getName1()
 
 
 // currying is the transformation of the multiple argument of several function of single argument in asequence
@@ -342,26 +352,76 @@ getName1()
 
 
 // scope chain() => Function always have a access to the variable and function present in its scope or lexical scope
-// let Name = "Ram"
 
-// function sayName(){
-//    function name1(){
-//       console.log(Name)
-//       var Name = "raj"
-//       console.log(Name)
-//       function name2(){
-//             console.log(Name)
-//       }
-//       name2()
-//    }
-//    name1()
-// }
-// sayName()
+var Name = "Ram"
+
+function sayName(){
+   function name1(){
+      console.log(Name)
+      var Name = "raj"
+      console.log(Name)
+      function name2(){
+            console.log(Name)
+      }
+      name2()
+   }
+   name1()
+}
+sayName()
 
 // console.log(y)
-// function xyz(){
-//    let y = 3;
+function xyz(){
+   let y = 3;
+}
+
+
+
+// callback function => if a function take function as parameter then it is called  Callback function.
+
+
+// function getData(){
+//    setTimeout(function(){
+//       console.log("hello")
+//    },2000)
 // }
+// getData();
+
+
+// function set(){
+//   let i = 2;
+//   setTimeout(function() {
+//     console.log(i)
+//   }, 4000);
+//   console.log('hello')
+// }
+// set();
+
+
+
+
+
+obj1= {
+   Name : "XYZ",
+   class : "1"
+}
+obj2= {
+   Name : "abc",
+   class : "2"
+}
+
+let getData = function(city){
+   console.log(`My Name is ${this.Name} and class is ${this.class} and city is ${city}` )
+}
+
+// getData.call(obj1,"panipuri")
+// getData.call(obj2,"golgappe")
+
+// getData.apply(obj1,["panipuri"])
+// getData.apply(obj2,["golgappe"])
+
+
+let getData1 = getData.bind(obj2,["golgappe"])
+getData1()
 
 
 
