@@ -11,22 +11,18 @@
 // sum = a+b;
 // }
 
+function getSum(a){
+   return function(b){
+      return function(c){
+         console.log(a*b*c)
+      }
+   }
+}
 
-// function getSum(a){
-//    return function(b){
-//       return function(c){
-//          console.log(a*b*c)
-//       }
-//    }
-// }
-
-// getSum(2)(3)(4)
-
-
+getSum(2)(3)(4)
 
 // =========================================CALL ============================================================
 // =========================================FUNCTION BURROWING ============================================================
-
 
 // let name1 = {
 //    firstName : "ram",
@@ -44,33 +40,34 @@
 // getName.call(name1)
 // getName.call(name2)
 
-
 // =====================If we want to add more parameter==================================
 
-let name1 = {
-      firstName : "ram",
-      lastName : "dev",
-   }
-   
-   let getName =  function(city,state){
-      console.log(`${this.firstName}  ${this.lastName} is from ${city} ${state}` )
-   }
-   
-   let name2 = {
-      firstName : "rameshwari",
-      lastName : "devi",
-   }
-   // getName.call(name1, "dehradun")
-   // getName.call(name2 , "maharastra")
-   getName.apply(name1, ["dehradun","jharkhand"])
-   getName.apply(name2, ["maharastra","uttar pradesh"])
-  
-   
-let getNameLater = getName.bind(name2, ["maharastra","uttar pradesh"])
-console.log(getNameLater)
-getNameLater()
+// let name1 = {
+//       firstName : "ram",
+//       lastName : "dev",
+//    }
 
+//    let getName =  function(city,state){
+//       console.log(`${this.firstName}  ${this.lastName} is from ${city} ${state}` )
+//    }
 
+//    let name2 = {
+//       firstName : "rameshwari",
+//       lastName : "devi",
+//    }
+//    // getName.call(name1, "dehradun")
+//    // getName.call(name2 , "maharastra")
+
+// ======================================apply========================================================
+
+//    getName.apply(name1, ["dehradun","jharkhand"])
+//    getName.apply(name2, ["maharastra","uttar pradesh"])
+
+// ========================================bind========================================================
+
+// let getNameLater = getName.bind(name2, ["maharastra","uttar pradesh"])
+// console.log(getNameLater)
+// getNameLater()
 
 // let count = document.querySelector(".count")
 
@@ -187,7 +184,6 @@ getNameLater()
 // }
 // set2()
 
-
 // function set2(){
 //    for(let i = 0 ; i<=5 ; i++){
 //       setTimeout(function(){
@@ -196,11 +192,6 @@ getNameLater()
 //    }
 // }
 // set2()
-
-
-
-
-
 
 // function set() {
 //   for (var i = 1; i <= 5; i++) {
@@ -217,12 +208,11 @@ getNameLater()
 // set();
 
 // function x(){
-   
+
 //    console.log('hello')
 // }
 
 // x(y())
-
 
 //  function y(){
 //    let i = 1;
@@ -231,11 +221,9 @@ getNameLater()
 //             }, 5000);
 // }
 
-
 // setTimeout(function (){
 //    console.log('hello')
 // },2000)
-
 
 // function xyz(z){
 //    console.log('hello')
@@ -252,6 +240,129 @@ getNameLater()
 //    console.log('hello')
 
 // }
+
+// let obj1 = {
+//    first : "Hi",
+//    Sec : "obj1"
+// }
+// let obj2 = {
+//    first : "Hello",
+//    Sec : "obj2"
+// }
+
+// let getHello = function(city){
+//    console.log(`${this.first} from ${this.Sec} in ${city}`)
+// }
+
+// getHello.call(obj1,"ranchi")
+// getHello.call(obj2, "jharkhand")
+
+// getHello.apply(obj1,["ranchi"])
+// getHello.call(obj2, ["jharkhand"])
+
+// let getHi = getHello.bind(obj1,["ranchi"])
+// getHi();
+
+// function func1() {
+//   setTimeout(() => {               
+//     console.log(x);
+//     console.log(y);
+//   }, 3000);
+//   var x = 2;
+//   let y = 12;
+// }
+// func1();
+
+// function x(){
+//    var a= 2;
+//    function y(){
+//       console.log(a)
+//    }
+// }
+
+
+
+
+
+
+
+
+// call / apply / bind
+
+// call function helps us to change the context of the "this " keyword  invocking funtion
+
+let name1 = {
+   firstName : "Ram",
+   lastName : "Avtaar"
+}
+let name2 = {
+   firstName : "Rameshwari",
+   lastName : "Devi"
+}
+
+let getName = function(city){
+   console.log(`${this.firstName} ${this.lastName} is from ${city}`)
+}
+
+// getName.apply(name1,["dehradun"])
+// getName.apply(name2,["Jharkhand"])
+
+let getName1 = getName.bind(name1,["dehradun"])
+getName1()
+
+
+// currying is the transformation of the multiple argument of several function of single argument in asequence
+
+
+// function volume(length){
+//    return function(breadth){
+//       return function(height){
+//           console.log(length * breadth * height)
+//       }
+//    }
+// }
+
+// volume(2)(3)(4);
+
+
+// combination of function enclosed with its outer environment or lexical environment is called closures
+// each and every function in js has a reference to its lexical environment mainly to variable and function this phenomenan is known as 
+
+// let a = "Ram"
+// function sayHello(){
+//    function sayHi(){
+//       function sayNothing(){
+//         console.log(`Say hello to ${a}`)
+//       }
+//       sayNothing();
+//    }
+//    sayHi()
+// }
+// sayHello()
+
+
+// scope chain() => Function always have a access to the variable and function present in its scope or lexical scope
+// let Name = "Ram"
+
+// function sayName(){
+//    function name1(){
+//       console.log(Name)
+//       var Name = "raj"
+//       console.log(Name)
+//       function name2(){
+//             console.log(Name)
+//       }
+//       name2()
+//    }
+//    name1()
+// }
+// sayName()
+
+// console.log(y)
+// function xyz(){
+//    let y = 3;
+// }
+
 
 
 
