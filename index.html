@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tyle.css">
     
 </head>
 <body>
@@ -167,7 +167,7 @@
 <!-- <span class="count">0</span>
 <button onclick="increment()">incrrement</button> -->
 
-<table>
+<!-- <table>
     <tr>
         <th>1</th>
         <th>1</th>
@@ -245,8 +245,32 @@
     <div class="child2"></div>
     <div class="child2"></div>
     <div class="child2"></div>
-</div>
+</div> -->
 
+<div class="grand"> grand
+    <div class= "parent"> parent
+        <div class="child">child</div>
+    </div>
+</div>
+<script>
+
+const grand = document.querySelector('.grand')
+const parent = document.querySelector('.parent')
+const child = document.querySelector('.child')
+
+grand.addEventListener('click',()=>{
+    alert("click1")
+})
+parent.addEventListener('click',()=>{
+    alert("click2")
+})
+child.addEventListener('click',(e)=>{
+    alert("click3")
+    e.stopPropagation();
+})
+
+
+</script>
     <script src="app.js"></script>
 </body>
 </html>

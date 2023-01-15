@@ -11,15 +11,15 @@
 // sum = a+b;
 // }
 
-function getSum(a){
-   return function(b){
-      return function(c){
-         console.log(a*b*c)
-      }
-   }
-}
+// function getSum(a){
+//    return function(b){
+//       return function(c){
+//          console.log(a*b*c)
+//       }
+//    }
+// }
 
-getSum(2)(3)(4)
+// getSum(2)(3)(4)
 
 // =========================================CALL ============================================================
 // =========================================FUNCTION BURROWING ============================================================
@@ -75,17 +75,12 @@ getSum(2)(3)(4)
 // count.innerHTML++;
 // }
 
-
-const val = [1,2,3,5,6,8]
+// const val = [1, 2, 3, 5, 6, 8];
 // const [a,b,c,d]= val;
 // console.log(a,b,c,d)
 
-
-
-
 // const val2 = [9,6,5, ...val]
 // console.log(val2)
-
 
 // let obj = {
 //     name : 'vishal',
@@ -95,7 +90,6 @@ const val = [1,2,3,5,6,8]
 
 // const {name,id} = obj
 // console.log(name,id)
-
 
 // const obj2 = {
 //     degree : "Btech",
@@ -274,7 +268,7 @@ const val = [1,2,3,5,6,8]
 // getHi();
 
 // function func1() {
-//   setTimeout(() => {               
+//   setTimeout(() => {
 //     console.log(x);
 //     console.log(y);
 //   }, 3000);
@@ -289,13 +283,6 @@ const val = [1,2,3,5,6,8]
 //       console.log(a)
 //    }
 // }
-
-
-
-
-
-
-
 
 // call / apply / bind
 
@@ -320,9 +307,7 @@ const val = [1,2,3,5,6,8]
 // let getName1 = getName.bind(name1,["dehradun"])
 // getName1()
 
-
 // currying is the transformation of the multiple argument of several function of single argument in asequence
-
 
 // function volume(length){
 //    return function(breadth){
@@ -334,9 +319,8 @@ const val = [1,2,3,5,6,8]
 
 // volume(2)(3)(4);
 
-
 // combination of function enclosed with its outer environment or lexical environment is called closures
-// each and every function in js has a reference to its lexical environment mainly to variable and function this phenomenan is known as 
+// each and every function in js has a reference to its lexical environment mainly to variable and function this phenomenan is known as
 
 // let a = "Ram"
 // function sayHello(){
@@ -350,34 +334,29 @@ const val = [1,2,3,5,6,8]
 // }
 // sayHello()
 
-
 // scope chain() => Function always have a access to the variable and function present in its scope or lexical scope
 
-var Name = "Ram"
 
-function sayName(){
-   function name1(){
-      console.log(Name)
-      var Name = "raj"
-      console.log(Name)
-      function name2(){
-            console.log(Name)
-      }
-      name2()
-   }
-   name1()
-}
-sayName()
+
+// function sayName() {
+//   function name1() {
+//    var a = 3;
+//     function name2() {
+//       console.log(a);
+//     }
+//     var a = 8;
+//     name2();
+//   }
+//   name1();
+// }
+// sayName();
 
 // console.log(y)
-function xyz(){
-   let y = 3;
-}
-
-
+// function xyz() {
+//   let y = 3;
+// }
 
 // callback function => if a function take function as parameter then it is called  Callback function.
-
 
 // function getData(){
 //    setTimeout(function(){
@@ -385,7 +364,6 @@ function xyz(){
 //    },2000)
 // }
 // getData();
-
 
 // function set(){
 //   let i = 2;
@@ -396,22 +374,20 @@ function xyz(){
 // }
 // set();
 
+// obj1 = {
+//   Name: "XYZ",
+//   class: "1",
+// };
+// obj2 = {
+//   Name: "abc",
+//   class: "2",
+// };
 
-
-
-
-obj1= {
-   Name : "XYZ",
-   class : "1"
-}
-obj2= {
-   Name : "abc",
-   class : "2"
-}
-
-let getData = function(city){
-   console.log(`My Name is ${this.Name} and class is ${this.class} and city is ${city}` )
-}
+// let getData = function (city) {
+//   console.log(
+//     `My Name is ${this.Name} and class is ${this.class} and city is ${city}`
+//   );
+// };
 
 // getData.call(obj1,"panipuri")
 // getData.call(obj2,"golgappe")
@@ -419,10 +395,77 @@ let getData = function(city){
 // getData.apply(obj1,["panipuri"])
 // getData.apply(obj2,["golgappe"])
 
-
-let getData1 = getData.bind(obj2,["golgappe"])
-getData1()
-
+// let getData1 = getData.bind(obj2, ["golgappe"]);
+// getData1();
 
 
+// function a(){
+// var d = 4;
+// function b(){
+//    console.log(d)
+// }
+// var d = 9;
+// b()
 
+// } 
+// a()
+  
+
+// const cart = ["shoe" ,"shirt", 'bat']
+
+
+// api.createOrder(cart,function (){
+//    api.proceedPay(function (){
+//       api.showorderSumm(function (){
+//          console.log('order confirm')
+//       })
+//    })
+// })
+
+// var a = 3 ;
+
+// function foo(){
+//    console.log(a)
+// }
+// foo()
+// var a = 20;
+
+
+// function getData(){
+//    setTimeout(function (){
+//       console.log('hello')
+//    },2000)
+// }
+// getData();
+
+
+// function xyz(){
+// console.log(this)
+// }
+// xyz()
+
+
+class railWayForm{
+   submit(){
+      console.log('submit')
+   }
+   cancel(){
+      console.log('cancel')
+   }
+}
+
+let ram = new railWayForm()
+console.log(ram.cancel)
+
+
+
+// function xyz(arr){
+//    new Promise((resolve,reject)=>{
+//       if(arr.length>5){
+//          reject("rejected")
+//       }else{
+//          resolve('resolved')
+//       }
+//    })
+// }
+// console.log(xyz([1,2,3,4,5,6]));
