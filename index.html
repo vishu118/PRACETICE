@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="tyle.css">
-    
-</head>
-<body>
-
-<!--    
+   
+  </head>
+  <body>
+    <!--    
     <div class="one" id="one">
         <table style="width:100%" >
             <caption>data of the student</caption>
@@ -36,7 +34,7 @@
         </table>
     </div>
     -->
-<!-- 
+    <!-- 
     <form>
        <label for="name">Name</label>
         <input type="text" placeholder="name"><br>
@@ -114,9 +112,6 @@
         <li>1</li>
     </ol> -->
 
-
-
-
     <!-- <div class="parent">
         <div class="child1">child1</div>
         <div class="child2">child2</div>
@@ -125,7 +120,7 @@
         
             </div> -->
 
-<!-- 
+    <!-- 
     <ul>
 
         <li>one</li>
@@ -145,9 +140,7 @@
 
 </form> -->
 
-
-
-<!-- 
+    <!-- 
 <ul>
     <li>one
         <ul>
@@ -164,10 +157,10 @@
     <li></li>
 </ul> -->
 
-<!-- <span class="count">0</span>
+    <!-- <span class="count">0</span>
 <button onclick="increment()">incrrement</button> -->
 
-<!-- <table>
+    <!-- <table>
     <tr>
         <th>1</th>
         <th>1</th>
@@ -247,7 +240,7 @@
     <div class="child2"></div>
 </div> -->
 
-<div class="grand"> grand
+    <!-- <div class="grand"> grand
     <div class= "parent"> parent
         <div class="child">child</div>
     </div>
@@ -267,10 +260,47 @@ parent.addEventListener('click',()=>{
 child.addEventListener('click',(e)=>{
     alert("click3")
     e.stopPropagation();
-})
+}) -->
 
+    <!-- </script> -->
 
-</script>
+    <div class="container">
+      <h2 class="number">0</h2>
+      <button type="button" class="increase">start</button>
+    </div>
+
+    <script>
+      const num = document.querySelector(".number");
+      const increase = document.querySelector(".increase");
+      // const decrease = document.querySelector(".decrease")
+
+      increase.addEventListener("click", (e) => {
+        abc();
+        stopabc();
+      });
+      function abc() {
+        if (num.innerText == "start") {
+          setInterval(() => {
+            num.innerText++;
+          }, 1000);
+          num.innerText = "Stop";
+        }
+      }
+     
+
+      function stopabc() {
+        if (num.innerText == "Stop") {
+          clearInterval(abc);
+        }
+      }
+     
+      // decrease.addEventListener("click", ()=>{
+      //     setInterval(()=>{
+      //         num.innerText
+      //     },1000)
+      // })
+    </script>
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

@@ -445,17 +445,17 @@
 // xyz()
 
 
-class railWayForm{
-   submit(){
-      console.log('submit')
-   }
-   cancel(){
-      console.log('cancel')
-   }
-}
+// class railWayForm{
+//    submit(){
+//       console.log('submit')
+//    }
+//    cancel(){
+//       console.log('cancel')
+//    }
+// }
 
-let ram = new railWayForm()
-console.log(ram.cancel)
+// let ram = new railWayForm()
+// console.log(ram.cancel)
 
 
 
@@ -469,3 +469,4 @@ console.log(ram.cancel)
 //    })
 // }
 // console.log(xyz([1,2,3,4,5,6]));
+
