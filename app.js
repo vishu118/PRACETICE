@@ -470,3 +470,84 @@
 // }
 // console.log(xyz([1,2,3,4,5,6]));
 
+// window.addEventListener('click',(e)=>{
+// if (e.target.classlist == "number"){
+//    console.log('hello')
+// }
+// })
+
+
+
+// const me = {
+//    talk () {
+// return "talking"
+//    }
+// }
+
+
+// const you = {
+//    talk(){
+//       return "talking"
+//          }
+// }
+// console.log(you.talk)
+
+
+
+// class Person {
+//    talk(){
+//       return "talking"
+//          }
+// }
+
+// const me = new Person
+// console.log(me.talk())
+// const you = new Person
+// console.log(you.talk())
+
+// console.log(me)
+
+// me.age = 23;
+// console.log(me)
+
+
+
+// function talk(){
+//    console.log(`I AM ${this.name}`)
+// }
+
+// const me = {
+//    name : "Vishal",
+//    talking : talk()
+// }
+
+// console.log(me.talking)
+
+
+
+
+// =============================================ASYNC SYNC============================================================
+
+// let a;
+// function call(){
+//    console.log('hello in call')
+//    a = 10;
+//    console.log('hello call 2nd')
+// }
+// call();
+// console.log(`hello ${a}`)
+
+
+let a;
+function call(){
+   console.log('hello in call')
+   setTimeout(()=>{
+      a = 20;
+      console.log(a)
+      console.log('set')
+   },2000)
+   // a = 10;
+   console.log('hello call 2nd')
+}
+call();
+console.log(`hello ${a}`)  
