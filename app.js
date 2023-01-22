@@ -538,16 +538,28 @@
 // console.log(`hello ${a}`)
 
 
-let a;
-function call(){
-   console.log('hello in call')
-   setTimeout(()=>{
-      a = 20;
-      console.log(a)
-      console.log('set')
-   },2000)
-   // a = 10;
-   console.log('hello call 2nd')
-}
-call();
-console.log(`hello ${a}`)  
+// let a;
+// function call(){
+//    console.log('hello in call')
+//    setTimeout(()=>{
+//       a = 20;
+//       console.log(a)
+//       console.log('set')
+//    },2000)
+//    // a = 10;
+//    console.log('hello call 2nd')
+// }
+// call();
+// console.log(`hello ${a}`)  
+
+const apiUrl =
+"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+const getMovies = async (api) => {
+  const response = await fetch(api);
+  console.log(response)
+  const data = await response.json();         
+  console.log(data)
+  showMovies(data.results);
+};
+
+getMovies(apiUrl)
