@@ -69,12 +69,6 @@
 // console.log(getNameLater)
 // getNameLater()
 
-// let count = document.querySelector(".count")
-
-// function increment(){
-// count.innerHTML++;
-// }
-
 // const val = [1, 2, 3, 5, 6, 8];
 // const [a,b,c,d]= val;
 // console.log(a,b,c,d)
@@ -151,6 +145,7 @@
 //        console.log(a)
 //     }
 //     var z = fun2()
+
 //    }
 //    fun1()
 
@@ -170,12 +165,12 @@
 // =======================================set time out===================================================================
 
 // function set1(){
-//    let i = "hello form set1";
+//    var i = "hello form set1";
 //    setTimeout(function(){
-// console.log(i)
+//       console.log(i)
 //    },1000)
 
-//    console.log('hello to set1')
+//    console.log('hello to set2')
 // }
 // set1();
 
@@ -198,14 +193,14 @@
 // set2()
 
 // function set() {
-//   for (var i = 1; i <= 5; i++) {
-//     function close(i) {
+//   for (let i = 1; i <= 5; i++) {
+//     function close() {
 //       setTimeout(function () {
 //         console.log(i);
-//       }, i * 1000);
+//       }, i*1000);
 //     }
-//     close(i);
-//   }
+//     close();
+// }
 //   console.log("hello");
 // }
 
@@ -336,8 +331,6 @@
 
 // scope chain() => Function always have a access to the variable and function present in its scope or lexical scope
 
-
-
 // function sayName() {
 //   function name1() {
 //    var a = 3;
@@ -398,7 +391,6 @@
 // let getData1 = getData.bind(obj2, ["golgappe"]);
 // getData1();
 
-
 // function a(){
 // var d = 4;
 // function b(){
@@ -407,12 +399,10 @@
 // var d = 9;
 // b()
 
-// } 
+// }
 // a()
-  
 
 // const cart = ["shoe" ,"shirt", 'bat']
-
 
 // api.createOrder(cart,function (){
 //    api.proceedPay(function (){
@@ -430,7 +420,6 @@
 // foo()
 // var a = 20;
 
-
 // function getData(){
 //    setTimeout(function (){
 //       console.log('hello')
@@ -438,12 +427,10 @@
 // }
 // getData();
 
-
 // function xyz(){
 // console.log(this)
 // }
 // xyz()
-
 
 // class railWayForm{
 //    submit(){
@@ -456,8 +443,6 @@
 
 // let ram = new railWayForm()
 // console.log(ram.cancel)
-
-
 
 // function xyz(arr){
 //    new Promise((resolve,reject)=>{
@@ -476,14 +461,11 @@
 // }
 // })
 
-
-
 // const me = {
 //    talk () {
 // return "talking"
 //    }
 // }
-
 
 // const you = {
 //    talk(){
@@ -491,8 +473,6 @@
 //          }
 // }
 // console.log(you.talk)
-
-
 
 // class Person {
 //    talk(){
@@ -510,8 +490,6 @@
 // me.age = 23;
 // console.log(me)
 
-
-
 // function talk(){
 //    console.log(`I AM ${this.name}`)
 // }
@@ -523,9 +501,6 @@
 
 // console.log(me.talking)
 
-
-
-
 // =============================================ASYNC SYNC============================================================
 
 // let a;
@@ -536,7 +511,6 @@
 // }
 // call();
 // console.log(`hello ${a}`)
-
 
 // let a;
 // function call(){
@@ -550,16 +524,320 @@
 //    console.log('hello call 2nd')
 // }
 // call();
-// console.log(`hello ${a}`)  
+// console.log(`hello ${a}`)
 
-const apiUrl =
-"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
-const getMovies = async (api) => {
-  const response = await fetch(api);
-  console.log(response)
-  const data = await response.json();         
-  console.log(data)
-  showMovies(data.results);
-};
+// const apiUrl =
+// "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+// const getMovies = async (api) => {
+//   const response = await fetch(api);
+//   console.log(response)
+//   const data = await response.json();
+//   console.log(data)
+//   showMovies(data.results);
+// };
 
-getMovies(apiUrl)
+// getMovies(apiUrl)
+
+// function abc(){
+//   console.log('hello')
+// }
+// abc();
+
+// function abc(){
+//   console.log(this)
+// }
+
+// const obj = {
+//   function (){
+//     console.log(`${this.name}`)
+//   }
+// }
+
+// const name = {
+//   name : "abcd"
+
+// }
+// obj.call("")
+
+// (()=>{
+//     console.log('hello')
+// })();
+
+// const promise1 = new Promise((resolve,reject)=>{
+//     console.log(1)
+//     resolve('resolve1')
+// })
+
+// const promise2 = promise1.then(res =>{
+//     console.log(res)
+// })
+
+// console.log('promise1',promise1)
+// console.log('promise2',promise2)
+
+// let arr = [1,3,65,78]
+
+// Array.prototype.myFilter = function (callback) {
+//     const newArr = []; //because filter returns new array
+//     for (let i = 0; i < this.length; i++) {
+//       if(callback(this[i], i, this)){
+//           newArr.push(this[i])
+//       };
+//     }
+//     return newArr;
+//   };
+
+//   let arr2 = arr.myFilter((ele) => {
+//     if (ele % 2 == 0) {
+//       return ele;
+//     }
+//   });
+
+//   console.log(arr2);
+
+//   Array.prototype.myMap = function (callback) {
+//         const newArr = []; //because filter returns new array
+//         for (let i = 0; i < this.length; i++) {
+//             newArr.push(callback(this[i], i, this))
+
+//         }
+//         return newArr;
+//       };
+
+//       let arr3 = arr.myMap((ele)=>{
+//         return ele*4
+//       })
+
+//       console.log(arr3)
+
+//   Array.prototype.mapFun = function (cb){
+//     const marpArr = [];
+//     for(let i = 0 ; i< this.length ; i++){
+// if(cb(this[i]))
+//     }
+//   }
+
+// Array.prototype.myforEach = function (callback) {
+//   for (let i = 0; i < this.length; i++) {
+//     callback(this[i], i, this);
+//   }
+// };
+
+// let arr = [3, 4, 33, 95];
+// arr.myforEach((ele) => {
+//   console.log(ele * 8);
+// });
+
+// ==================================================CALLBACKS=================================================================
+
+// function registerUser(callback) {
+//   setTimeout(() => {
+//     console.log("register User");
+//     callback();
+//   }, 1000);
+// }
+// console.log('hello')
+// function sendWelcomeEmail(callback) {
+//   setTimeout(() => {
+//     console.log("welcome to user");
+//     callback();
+//   }, 2000);
+// }
+
+// function login(callback) {
+//     setTimeout(()=>{
+
+//         console.log(" User Login");
+//         callback()
+//     },1000)
+// }
+
+// function getDetails(callback) {
+//     setTimeout(()=>{
+//         console.log("User Details");
+//         callback()
+//     },1000)
+// }
+
+// function display() {
+//     setTimeout(()=>{
+
+//         console.log("User  Display");
+//     })
+// }
+
+// registerUser( ()=> {
+//   sendWelcomeEmail(() => {
+//     login(() => {
+//       getDetails(() => {
+//         display();
+//       });
+//     });
+//   });
+// }); 
+
+
+
+// function registerUser() {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//           console.log("register User");
+//           resolve();
+//         }, 1000);
+
+//     })
+//   }
+//   console.log('hello')
+//   function sendWelcomeEmail() {
+//     return new Promise((resolve,reject)=>{
+
+//         setTimeout(() => {
+//           console.log("welcome to user");
+//           resolve();
+//         }, 2000);
+//     })
+//   }
+  
+//   function login() {
+//     return new Promise((resolve, reject) => {
+        
+//         setTimeout(()=>{
+    
+//             console.log(" User Login");
+//             resolve()
+          
+//         },1000)
+//     })
+//   }
+  
+//   function getDetails() {
+//     return new Promise((resolve, reject) => {
+        
+//         setTimeout(()=>{
+//             console.log("User Details");
+//             reject("error has occured")
+//         },1000)
+//     })
+//   }
+  
+//   function display() {
+//       setTimeout(()=>{
+  
+//           console.log("User  Display");
+//       })
+//   }
+  
+//   registerUser()
+//   .then(sendWelcomeEmail)
+//   .then(login)
+//   .then(getDetails)
+//   .then(display)
+
+//   .catch((error)=>{
+// console.log(error)
+//   })
+
+
+
+
+// function registerUser() {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//           console.log("register User");
+//           resolve();
+//         }, 1000);
+
+//     })
+//   }
+//   console.log('hello')
+//   function sendWelcomeEmail() {
+//     return new Promise((resolve,reject)=>{
+
+//         setTimeout(() => {
+//           console.log("welcome to user");
+//           resolve();
+//         }, 2000);
+//     })
+//   }
+  
+//   function login() {
+//     return new Promise((resolve, reject) => {
+        
+//         setTimeout(()=>{
+    
+//             console.log(" User Login");
+//             resolve()
+          
+//         },1000)
+//     })
+//   }
+  
+//   function getDetails() {
+//     return new Promise((resolve, reject) => {
+        
+//         setTimeout(()=>{
+//             console.log("User Details");
+//             resolve()
+//         },1000)
+//     })
+//   }
+  
+//   function display() {
+//     return new Promise((resolve, reject) => {
+        
+//         setTimeout(()=>{
+    
+//             console.log("User  Display");
+//             resolve()
+//         },1000)
+//     })
+//   }
+  
+//  async function loadCode(){
+//     await registerUser();
+//     await sendWelcomeEmail();
+//     await login();
+//     await getDetails();
+//     await display();
+//  }
+
+//  loadCode().then(()=>{
+//     console.log("All done")
+//  });
+
+
+
+
+
+console.log('hi')
+function userName(username){
+    setTimeout(()=>{
+        return (`hi to ${username}`)
+    },1000)
+}
+
+
+let message = userName("vishal")
+console.log(message)
+console.log("hello")
+
+
+
+
+
+// ==============================================PROMISE ================================================================================
+
+// const apiUrl =
+// "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+
+// const result = fetch(apiUrl)
+// console.log(result)
+
+// result.then(function(){
+
+//     console.log("data")
+// })
+
+// result.catch(function(){
+//     console.log("ho")
+// })
