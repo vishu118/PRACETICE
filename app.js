@@ -688,12 +688,13 @@
 //     })
 //   }
 //   console.log('hello')
+
 //   function sendWelcomeEmail() {
 //     return new Promise((resolve,reject)=>{
 
 //         setTimeout(() => {
 //           console.log("welcome to user");
-//           resolve();
+//           reject("error occur");
 //         }, 2000);
 //     })
 //   }
@@ -715,7 +716,7 @@
         
 //         setTimeout(()=>{
 //             console.log("User Details");
-//             reject("error has occured")
+//             resolve("error has occured")
 //         },1000)
 //     })
 //   }
@@ -734,7 +735,7 @@
 //   .then(display)
 
 //   .catch((error)=>{
-// console.log(error)
+//    console.log(error)
 //   })
 
 
@@ -801,6 +802,8 @@
 //     await display();
 //  }
 
+
+
 //  loadCode().then(()=>{
 //     console.log("All done")
 //  });
@@ -809,19 +812,96 @@
 
 
 
-console.log('hi')
-function userName(username){
-    setTimeout(()=>{
-        return (`hi to ${username}`)
-    },1000)
-}
+// console.log('hi')
+// function userName(username){
+//     setTimeout(()=>{
+//         return (`hi to ${username}`)
+//     },1000)
+// }
 
 
-let message = userName("vishal")
-console.log(message)
-console.log("hello")
+// let message = userName("vishal")
+// console.log(message)
+// console.log("hello")
 
 
+
+// registerUser
+// welcome mail
+// Login
+// details 
+// display
+
+
+// function registerUser(){
+//     console.log('register user')
+// }
+// registerUser()
+
+// function welCome(){
+//     setTimeout(()=>{
+
+//         console.log('welcome')
+//     },1000)
+// }
+// welCome()
+
+// function login(){
+//     console.log('login')
+// }
+// login()
+
+
+
+// function registerUser(callback) {
+//     setTimeout(() => {
+//       console.log("register User");
+//       callback();
+//     }, 1000);
+//   }
+
+
+//   console.log('hello')
+
+//   function sendWelcomeEmail(callback) {
+//     setTimeout(() => {
+//       console.log("welcome to user");
+//       callback();
+//     }, 2000);
+//   }
+  
+//   function login(callback) {
+//       setTimeout(()=>{
+  
+//           console.log(" User Login");
+//           callback()
+//       },000)
+//   }
+  
+//   function getDetails(callback) {
+//       setTimeout(()=>{
+//           console.log("User Details");
+//           callback()
+//       },1000)
+//   }
+  
+//   function display() {
+//       setTimeout(()=>{
+  
+//           console.log("User  Display");
+//       })
+//   }
+  
+//   registerUser( ()=> {
+//     sendWelcomeEmail(() => {
+//       login(() => {
+//         getDetails(() => {
+//           display();
+//         });
+//       });
+//     });
+//   }); 
+  
 
 
 
@@ -841,3 +921,91 @@ console.log("hello")
 // result.catch(function(){
 //     console.log("ho")
 // })
+
+//  async function apiFetch(api){
+// const response = await fetch(api)
+// console.log(response)
+// const data = await response.json();
+// console.log(data)
+// }
+
+// apiFetch(apiUrl)
+
+
+// const promise1 = new Promise((resolve, reject)=>{
+//     console.log(1);
+//     resolve("resolve1")
+// })
+// const promise2 =  promise1.catch((res)=>{
+//     console.log(res);
+// })
+// console.log("promise1:", promise1)
+// console.log("promise2:", promise2)
+
+
+
+// add();
+// (function greet(){
+//     console.log("hello")
+// })();
+
+// function add(){
+//     console.log("this is add function")
+// }
+
+
+
+// let newFun = sampler("varsha", 2);
+// newFun() //not execute
+// newFun() // execute
+
+// let flag = 0;
+// let fun = (a = "varsha", b = 3) => {
+//      flag++;
+// //   console.log(b, flag);
+//   if (flag == b) {
+//     console.log(a);
+//     flag = 0;
+//   }
+//   return;
+// };
+// fun();
+// fun();
+// fun();
+// fun();
+// fun();
+// fun();
+
+
+let str = "i love my india";
+let str2 = "aeiou"
+
+function toUpperCase(str){
+    let len = str.length;
+    let newStr = ""
+
+    for(let i = 0 ; i<len ; i++){
+        if( str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u"){
+          newStr+= str[i].toUpperCase()
+        }else{
+           newStr+= str[i];
+        }
+    }return newStr
+}
+
+console.log(toUpperCase('i love my india'))
+
+
+let result = str.split('').map(function(ele){
+    return (str2.indexOf(ele) > -1) ? ele.toUpperCase():ele;
+})
+console.log(result.join(""))
+
+
+
+
+
+
+
+
+
