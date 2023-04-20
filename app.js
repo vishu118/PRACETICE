@@ -977,35 +977,52 @@
 // fun();
 
 
-let str = "i love my india";
-let str2 = "aeiou"
+// let str = "i love my india";
+// let str2 = "aeiou"
 
-function toUpperCase(str){
-    let len = str.length;
-    let newStr = ""
+// function toUpperCase(str){
+//     let len = str.length;
+//     let newStr = ""
 
-    for(let i = 0 ; i<len ; i++){
-        if( str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u"){
-          newStr+= str[i].toUpperCase()
-        }else{
-           newStr+= str[i];
-        }
-    }return newStr
+//     for(let i = 0 ; i<len ; i++){
+//         if( str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u"){
+//           newStr+= str[i].toUpperCase()
+//         }else{
+//            newStr+= str[i];
+//         }
+//     }return newStr
+// }
+
+// console.log(toUpperCase('i love my india'))
+
+
+// let result = str.split('').map(function(ele){
+//     return (str2.indexOf(ele) > -1) ? ele.toUpperCase():ele;
+// })
+// console.log(result.join(""))
+
+
+
+// =======f====================================RECURSION============================================
+ 
+function fabo(n){
+    return n-2 + n-1;
+    if(n==1|| n==1){
+        return 1
+    }
+}
+const result = fabo(9)
+
+
+console.log(result)
+
+
+function count(n){
+    setInterval((console.log(n)),1000)
+   const newNum = n-1;
+   if(newNum>0){
+    count(newNum)
+   }
 }
 
-console.log(toUpperCase('i love my india'))
-
-
-let result = str.split('').map(function(ele){
-    return (str2.indexOf(ele) > -1) ? ele.toUpperCase():ele;
-})
-console.log(result.join(""))
-
-
-
-
-
-
-
-
-
+count(10)
